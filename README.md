@@ -115,8 +115,3 @@ Feel free to fork this repository and contribute by submitting a pull request.
 ### License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
-
-```
-
-This `README.md` gives a clear overview of the project, including the technology stack, features, setup instructions, and how to get started. Feel free to adjust it as needed!
-```
