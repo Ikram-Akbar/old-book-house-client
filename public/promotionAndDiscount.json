@@ -1,0 +1,112 @@
+[
+    {
+        "id": 1,
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "genre": "Classic",
+        "regularPrice": 15.00,
+        "discountPrice": 10.00,
+        "isOnSale": true,
+        "publicationYear": 1813,
+        "imageUrl": "https://i.ibb.co/nwQTggH/aman-upadhyay-JAgok-V30k-Gk-unsplash.jpg"
+    },
+    {
+        "id": 2,
+        "title": "1984",
+        "author": "George Orwell",
+        "genre": "Dystopian",
+        "regularPrice": 12.00,
+        "discountPrice": null,
+        "isOnSale": false,
+        "publicationYear": 1949,
+        "imageUrl": "https://i.ibb.co/4mG6t4L/ionela-mat-YKe-I255r5-MQ-unsplash.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Moby Dick",
+        "author": "Herman Melville",
+        "genre": "Adventure",
+        "regularPrice": 20.00,
+        "discountPrice": 15.00,
+        "isOnSale": true,
+        "publicationYear": 1851,
+        "imageUrl": "https://i.ibb.co/0M3xfqD/lina-a-3-Gacb2-IYr-Ak-unsplash.jpg"
+    },
+    {
+        "id": 4,
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "genre": "Classic",
+        "regularPrice": 18.00,
+        "discountPrice": 14.00,
+        "isOnSale": true,
+        "publicationYear": 1960,
+        "imageUrl": "https://i.ibb.co/tqLv8Jr/jilbert-ebrahimi-HAw-A1-N2gjo8-unsplash.jpg"
+    },
+    {
+        "id": 5,
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "genre": "Classic",
+        "regularPrice": 10.00,
+        "discountPrice": null,
+        "isOnSale": false,
+        "publicationYear": 1925,
+        "imageUrl": "https://i.ibb.co/pwMdbLL/nick-fewings-co-uk-NRLto-Q-unsplash.jpg"
+    },
+    {
+        "id": 6,
+        "title": "Brave New World",
+        "author": "Aldous Huxley",
+        "genre": "Dystopian",
+        "regularPrice": 14.00,
+        "discountPrice": 9.99,
+        "isOnSale": true,
+        "publicationYear": 1932,
+        "imageUrl": "https://i.ibb.co/nDzYMQV/nick-fewings-KUCy-Ztj-Kqw-A-unsplash.jpg"
+    },
+    {
+        "id": 7,
+        "title": "The Catcher in the Rye",
+        "author": "J.D. Salinger",
+        "genre": "Fiction",
+        "regularPrice": 16.00,
+        "discountPrice": null,
+        "isOnSale": false,
+        "publicationYear": 1951,
+        "imageUrl": "https://i.ibb.co/dLmJSF6/florencia-viadana-xg-Ia-Bmsi-WI0-unsplash.jpg"
+    },
+    {
+        "id": 8,
+        "title": "Wuthering Heights",
+        "author": "Emily Brontë",
+        "genre": "Classic",
+        "regularPrice": 12.00,
+        "discountPrice": 8.00,
+        "isOnSale": true,
+        "publicationYear": 1847,
+        "imageUrl": "https://i.ibb.co/T4Mvmq7/kari-shea-Mr-Xip-Ns-TSb-A-unsplash.jpg"
+    },
+    {
+        "id": 9,
+        "title": "Fahrenheit 451",
+        "author": "Ray Bradbury",
+        "genre": "Dystopian",
+        "regularPrice": 14.00,
+        "discountPrice": null,
+        "isOnSale": false,
+        "publicationYear": 1953,
+        "imageUrl": "https://i.ibb.co/DLkjTMw/kelly-sikkema-u8-FRCb7-FQDI-unsplash.jpg"
+    },
+    {
+        "id": 10,
+        "title": "Crime and Punishment",
+        "author": "Fyodor Dostoevsky",
+        "genre": "Philosophical",
+        "regularPrice": 25.00,
+        "discountPrice": 18.00,
+        "isOnSale": true,
+        "publicationYear": 1866,
+        "imageUrl": "https://i.ibb.co/JqgpsCF/road-trip-with-raj-o4c2zo-Vhj-Sw-unsplash.jpg"
+    }
+]
