@@ -1,10 +1,19 @@
+import { Col, Container, Row } from "react-bootstrap";
+import Hero from "./Hero/Hero";
+
 
 
 const Home = () => {
     return (
-        <div>
-           <h6>Home page</h6> 
-        </div>
+        <>
+            <Container>
+                <Row>
+                    <Col >
+                        <Hero/>
+                    </Col>
+                </Row>
+            </Container>
+        </>
     );
 };
 
