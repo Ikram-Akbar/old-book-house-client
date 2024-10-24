@@ -1,11 +1,21 @@
-import { useState } from 'react';
-import { Form, Button, Container, Row, Col } from 'react-bootstrap';
-import { FaGoogle, FaGithub, FaFacebookF, FaEye, FaEyeSlash } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { useContext, useState } from "react";
+import { Form, Button, Container, Row, Col } from "react-bootstrap";
+import {
+    FaGoogle,
+    FaGithub,
+    FaFacebookF,
+    FaEye,
+    FaEyeSlash,
+} from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Register = () => {
+    const { createUserEmailPass } = useContext(AuthContext);
     const [passwordVisible, setPasswordVisible] = useState(false);
     const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
+    const [error, setError] = useState("");
 
     const togglePasswordVisibility = () => {
         setPasswordVisible(!passwordVisible);
@@ -15,40 +25,101 @@ const Register = () => {
         setConfirmPasswordVisible(!confirmPasswordVisible);
     };
 
+    const handleOnSubmit = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const phone = form.phone.value;
+        const photoUrl = form.photoUrl.value;
+        const password = form.password.value;
+        const confirmPassword = form.confirmPassword.value;
+
+        if (password !== confirmPassword) {
+            setError("Passwords do not match");
+            return;
+        }
+
+        if (password.length < 6) {
+            setError("Password must be at least 6 characters long");
+            return;
+        }
+
+        setError("");
+
+        const userInfo = { name, email, phone, photoUrl, password };
+        console.log(userInfo);
+        createUserEmailPass(email, password)
+            .then(() => {
+                Swal.fire({
+                    title: "Good job!",
+                    text: "Check your email and verify email by given instruction",
+                    icon: "success",
+                }).then(() => {
+                    form.reset();
+                });
+            })
+            .catch((err) => setError(err.message));
+    };
+
     return (
         <Container className="mt-5">
             <Row className="justify-content-md-center">
                 <Col md={6}>
                     <h2 className="text-center">Create a New Account</h2>
-                    <p className="text-center">Fill in the details below to register or sign up using social media</p>
+                    <p className="text-center">
+                        Fill in the details below to register or sign up using social media
+                    </p>
 
-                    <Form>
+                    {error && <p className="text-danger text-center">{error}</p>}
+
+                    <Form onSubmit={handleOnSubmit}>
                         <Form.Group controlId="formBasicName" className="mb-3">
                             <Form.Label>Full Name</Form.Label>
-                            <Form.Control type="text" placeholder="Enter your full name" />
+                            <Form.Control
+                                name="name"
+                                type="text"
+                                placeholder="Enter your full name"
+                                required
+                            />
                         </Form.Group>
 
                         <Form.Group controlId="formBasicEmail" className="mb-3">
                             <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" placeholder="Enter your email" />
+                            <Form.Control
+                                name="email"
+                                type="email"
+                                placeholder="Enter your email"
+                                required
+                            />
                         </Form.Group>
 
                         <Form.Group controlId="formBasicPhone" className="mb-3">
                             <Form.Label>Phone Number</Form.Label>
-                            <Form.Control type="tel" placeholder="Enter your phone number" />
+                            <Form.Control
+                                name="phone"
+                                type="tel"
+                                placeholder="Enter your phone number"
+                            />
                         </Form.Group>
 
                         <Form.Group controlId="formPhotoURL" className="mb-3">
                             <Form.Label>Photo URL</Form.Label>
-                            <Form.Control type="url" placeholder="Enter your photo URL" />
+                            <Form.Control
+                                name="photoUrl"
+                                type="url"
+                                placeholder="Enter your photo URL"
+                            />
                         </Form.Group>
 
                         <Form.Group controlId="formBasicPassword" className="mb-3">
                             <Form.Label>Password</Form.Label>
                             <div className="input-group">
                                 <Form.Control
+                                    name="password"
                                     type={passwordVisible ? "text" : "password"}
                                     placeholder="Enter password"
+                                    required
                                 />
                                 <Button
                                     variant="outline-secondary"
@@ -64,8 +135,10 @@ const Register = () => {
                             <Form.Label>Confirm Password</Form.Label>
                             <div className="input-group">
                                 <Form.Control
+                                    name="confirmPassword"
                                     type={confirmPasswordVisible ? "text" : "password"}
                                     placeholder="Confirm your password"
+                                    required
                                 />
                                 <Button
                                     variant="outline-secondary"
