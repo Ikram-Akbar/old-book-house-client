@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "title": "The Old Man and the Sea",
+        "author": "Ernest Hemingway",
+        "price": "150",
+        "imageUrl": "https://i.ibb.co/nwQTggH/aman-upadhyay-JAgok-V30k-Gk-unsplash.jpg",
+        "description": "A classic tale of a man's struggle against nature."
+    },
+    {
+        "id": 2,
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "price": "120",
+        "imageUrl": "https://i.ibb.co/4mG6t4L/ionela-mat-YKe-I255r5-MQ-unsplash.jpg",
+        "description": "A romantic novel that explores the themes of love and social standing."
+    },
+    {
+        "id": 3,
+        "title": "Moby Dick",
+        "author": "Herman Melville",
+        "price": "180",
+        "imageUrl": "https://i.ibb.co/tqLv8Jr/jilbert-ebrahimi-HAw-A1-N2gjo8-unsplash.jpg",
+        "description": "The narrative of Ishmael's adventures on the whaling ship Pequod."
+    },
+    {
+        "id": 4,
+        "title": "1984",
+        "author": "George Orwell",
+        "price": "200",
+        "imageUrl": "https://i.ibb.co/0M3xfqD/lina-a-3-Gacb2-IYr-Ak-unsplash.jpg",
+        "description": "A dystopian novel set in a totalitarian society ruled by Big Brother."
+    },
+    {
+        "id": 5,
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "price": "160",
+        "imageUrl": "https://i.ibb.co/pwMdbLL/nick-fewings-co-uk-NRLto-Q-unsplash.jpg",
+        "description": "A story of racial injustice and moral growth in the Deep South."
+    },
+    {
+        "id": 6,
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "price": "170",
+        "imageUrl": "https://i.ibb.co/nDzYMQV/nick-fewings-KUCy-Ztj-Kqw-A-unsplash.jpg",
+        "description": "A novel that critiques the American Dream in the 1920s."
+    },
+    {
+        "id": 7,
+        "title": "Brave New World",
+        "author": "Aldous Huxley",
+        "price": "190",
+        "imageUrl": "https://i.ibb.co/dLmJSF6/florencia-viadana-xg-Ia-Bmsi-WI0-unsplash.jpg",
+        "description": "A dystopian novel that explores the implications of a technologically advanced society."
+    },
+    {
+        "id": 8,
+        "title": "Fahrenheit 451",
+        "author": "Ray Bradbury",
+        "price": "220",
+        "imageUrl": "https://i.ibb.co/T4Mvmq7/kari-shea-Mr-Xip-Ns-TSb-A-unsplash.jpg",
+        "description": "A novel about a future society where books are outlawed."
+    },
+    {
+        "id": 9,
+        "title": "The Catcher in the Rye",
+        "author": "J.D. Salinger",
+        "price": "160",
+        "imageUrl": "https://i.ibb.co/DLkjTMw/kelly-sikkema-u8-FRCb7-FQDI-unsplash.jpg",
+        "description": "A story of teenage rebellion and alienation."
+    },
+    {
+        "id": 10,
+        "title": "Wuthering Heights",
+        "author": "Emily Brontë",
+        "price": "140",
+        "imageUrl": "https://i.ibb.co/JqgpsCF/road-trip-with-raj-o4c2zo-Vhj-Sw-unsplash.jpg",
+        "description": "A tale of passion and revenge on the Yorkshire moors."
+    }
+]
