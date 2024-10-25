@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Card, Row, Col, Button } from 'react-bootstrap';
 import { FaUser, FaMoneyBillWave, FaShoppingCart } from 'react-icons/fa'; // Importing icons
+import { useCart } from '../../../CustomHooks/useCart';
 
 const PopularBooks = () => {
     const [books, setBooks] = useState([]);
+    const {  addToCart } = useCart();
 
     useEffect(() => {
         fetch("/popularbooks.json")
@@ -32,7 +34,10 @@ const PopularBooks = () => {
                                         <FaMoneyBillWave className="me-2" />
                                         {book.price} BDT
                                     </Card.Text>
-                                    <Button variant="primary" className="d-flex align-items-center">
+                                    <Button
+                                        onClick={()=>{addToCart(book)}}
+                                        variant="primary"
+                                        className="d-flex align-items-center">
                                         <FaShoppingCart className="me-1" />
                                         Add to Cart
                                     </Button>

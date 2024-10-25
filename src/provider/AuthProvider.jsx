@@ -3,6 +3,8 @@
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../Config/firebase.config";
+import Swal from "sweetalert2";
+
 
 export const AuthContext = createContext();
 const googleProvider = new GoogleAuthProvider();
@@ -12,6 +14,10 @@ const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
 
     const createUserEmailPass = async (email, pass) => {
+        if (user) {
+            Swal.fire("Please Log out Current User !")
+            return;
+        }
         setLoading(true);
         const userCredentials = await createUserWithEmailAndPassword(auth, email, pass);
         await sendEmailVerification(userCredentials.user);
@@ -19,11 +25,19 @@ const AuthProvider = ({ children }) => {
     };
 
     const signInEmailPass = (email, pass) => {
+        if (user) {
+            Swal.fire("Please Log out Current User !")
+            return;
+        }
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, pass);
     };
 
     const signInWithGoogle = () => {
+        if (user) {
+            Swal.fire("Please Log out Current User !")
+            return;
+        }
         setLoading(true);
         return signInWithPopup(auth, googleProvider);
     };

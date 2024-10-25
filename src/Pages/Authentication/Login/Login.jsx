@@ -1,15 +1,41 @@
 
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 import { FaGoogle, FaGithub, FaFacebookF, FaEye, FaEyeSlash } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link,  useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../../provider/AuthProvider';
+import toast from 'react-hot-toast';
 
 const LoginForm = () => {
+    const { signInWithGoogle, signInEmailPass, } = useContext(AuthContext);
     const [passwordVisible, setPasswordVisible] = useState(false);
+    const navigate = useNavigate();
 
     const togglePasswordVisibility = () => {
         setPasswordVisible(!passwordVisible);
     };
+    const handleLoginForm = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        signInEmailPass(email, password)
+            .then((res) => {
+                console.log(res.data);
+                toast.success("Welcome");
+                navigate("/")
+            })
+            .catch((err) => {
+                toast.error(err.message)
+            })
+    };
+    const handleGoogleLogin = () => {
+        signInWithGoogle()
+            .then(() => {
+                toast.success("Welcome");
+                navigate("/");
+        })
+    }
 
     return (
         <Container className="mt-5">
@@ -18,16 +44,17 @@ const LoginForm = () => {
                     <h2 className="text-center">Login to Your Account</h2>
                     <p className="text-center">Please login with your email and password or continue with social media</p>
 
-                    <Form>
+                    <Form onSubmit={handleLoginForm}>
                         <Form.Group controlId="formBasicEmail" className="mb-3">
                             <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" placeholder="Enter email" />
+                            <Form.Control name='email' type="email" placeholder="Enter email" />
                         </Form.Group>
 
                         <Form.Group controlId="formBasicPassword" className="mb-3">
                             <Form.Label>Password</Form.Label>
                             <div className="input-group">
                                 <Form.Control
+                                    name='password'
                                     type={passwordVisible ? "text" : "password"}
                                     placeholder="Enter password"
                                 />
@@ -48,7 +75,7 @@ const LoginForm = () => {
 
                         <p className="text-center">Or continue with:</p>
                         <div className="d-flex justify-content-between mb-4">
-                            <Button variant="outline-danger" className="w-100 me-2">
+                            <Button onClick={handleGoogleLogin} variant="outline-danger" className="w-100 me-2">
                                 <FaGoogle /> Google
                             </Button>
                             <Button variant="outline-dark" className="w-100 me-2">
