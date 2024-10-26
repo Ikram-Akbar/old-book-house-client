@@ -7,6 +7,8 @@ import Login from "../Pages/Authentication/Login/Login";
 import Register from "../Pages/Authentication/Register/Register";
 import UserCart from "../Pages/UserCart/UserCart";
 import ForgetPassword from "../Pages/Authentication/ForgetPassword/ForgetPassword";
+import About from "../Pages/About/About";
+import Contact from "../Pages/Contact/Contact";
 
 export const router = createBrowserRouter([
     {
@@ -25,6 +27,14 @@ export const router = createBrowserRouter([
             {
                 path: "products",
                 element:<Products/>
+            },
+            {
+                path: "about",
+                element:<About/>
+            },
+            {
+                path: "contact",
+                element:<Contact/>
             },
             {
                 path: "my-cart",

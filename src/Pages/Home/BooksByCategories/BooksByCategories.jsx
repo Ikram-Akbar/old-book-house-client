@@ -52,17 +52,14 @@ const BooksByCategories = () => {
                     <Col md={6} lg={4} key={index} className="mb-4">
                         <Card className="h-100 shadow-sm">
                             <Row className="g-0">
-                                <Col md={5}>
+                                <Col md={5} className="">
                                     {/* Book Image */}
                                     <Card.Img
+                                       
                                         src={book.imageUrl}
                                         alt={book.title}
                                         style={{
-                                            width: '100%',
-                                            height: '100%',
-                                            objectFit: 'cover',
-                                            borderRadius: '5px 0 0 5px',
-                                            border: '2px solid #ddd'
+                                            objectFit: 'cover',                
                                         }}
                                     />
                                 </Col>

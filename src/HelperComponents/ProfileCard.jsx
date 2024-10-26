@@ -9,8 +9,8 @@ const ProfileCard = () => {
 
     return (
         <Card style={{ position: "absolute", top: "100%", right: 0, width: "300px", zIndex: 1 }}>
-            <Card.Body>
-                <Card.Img roundedCircle className="w-25 " src={user.photoURL} />
+            <Card.Body className="text-center">
+                <Card.Img  className="w-25 rounded-circle center " src={user.photoURL} />
                 <Card.Title>{user.displayName}</Card.Title>
                 <Card.Text>Email: {user.email}</Card.Text>
                 <Button variant="danger" onClick={()=>{logOut()}}>Logout</Button>

@@ -1,5 +1,4 @@
 import { Navbar, Nav, Container, Button } from "react-bootstrap";
-import { LinkContainer } from "react-router-bootstrap";
 import { FaShoppingCart, FaSignInAlt, FaUser } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { useContext, useState } from "react";
@@ -22,24 +21,29 @@ const Header = () => {
     return (
         <Navbar bg="light" expand="lg" sticky="top">
             <Container>
-                <LinkContainer to="/">
-                    <Navbar.Brand>Old Book House</Navbar.Brand>
-                </LinkContainer>
+                <NavLink to="/" className="navbar-brand">
+                    Old Book House
+                </NavLink>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mx-auto">
                         {navLinks.map((link) => (
-                            <LinkContainer key={link.path} to={link.path}>
-                                <Nav.Link as={NavLink}>{link.label}</Nav.Link>
-                            </LinkContainer>
+                            <NavLink
+                                key={link.path}
+                                to={link.path}
+                                className={({ isActive }) =>
+                                    isActive ? "nav-link font-bold text-primary" : "nav-link text-bold"
+                                }
+                            >
+                                {link.label}
+                            </NavLink>
                         ))}
                     </Nav>
+
                     <Nav className="ms-auto">
-                        <LinkContainer to="/my-cart">
-                            <Nav.Link as={NavLink}>
-                                <FaShoppingCart className="mx-3" />
-                            </Nav.Link>
-                        </LinkContainer>
+                        <NavLink to="/my-cart" className="nav-link">
+                            <FaShoppingCart className="mx-3" />
+                        </NavLink>
                         {user ? (
                             <>
                                 <Button onClick={toggleProfile} variant="outline-primary">
@@ -49,12 +53,12 @@ const Header = () => {
                                 {showProfile && <ProfileCard />}
                             </>
                         ) : (
-                            <LinkContainer to="/login">
-                                <Button variant="outline-primary" as={NavLink}>
+                            <NavLink to="/login">
+                                <Button variant="outline-primary">
                                     <FaSignInAlt className="mx-2" />
                                     Login
                                 </Button>
-                            </LinkContainer>
+                            </NavLink>
                         )}
                     </Nav>
                 </Navbar.Collapse>

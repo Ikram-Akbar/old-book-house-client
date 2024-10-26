@@ -32,7 +32,7 @@ const PopularBooks = () => {
                                 <div className="d-flex justify-content-between align-items-center">
                                     <Card.Text className="d-flex align-items-center font-weight-bold text-success">
                                         <FaMoneyBillWave className="me-2" />
-                                        {book.price} BDT
+                                        {book.price} USD
                                     </Card.Text>
                                     <Button
                                         onClick={()=>{addToCart(book)}}
